@@ -32,17 +32,8 @@
   <li>HTML5</li>
   <li>CSS3 / Tailwind CSS</li>
   <li>JavaScript</li>
-  <li>React (if used)</li>
+  <li>React </li>
 </ul>
-
-<h2>Getting Started</h2>
-
-<pre>
-git clone https://github.com/your-username/SALADVERSE.git
-cd SALADVERSE
-npm install
-npm run dev
-</pre>
 
 <h2>Live Demo</h2>
 <p>
