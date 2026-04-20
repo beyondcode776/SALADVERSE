@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SALADVERSE DESIGN SYSTEM - Fresh, Organic, Alive */
+
+@layer base {
+  :root {
+    /* Core Greens - The Soul of SaladVerse */
+    --lettuce: 142 71% 45%;
+    --lettuce-glow: 142 80% 55%;
+    --spinach: 150 40% 12%;
+    --spinach-deep: 150 45% 8%;
+    --cucumber: 145 45% 85%;
+    --cucumber-soft: 145 40% 92%;
+    --mint: 160 50% 70%;
+    
+    /* Accent - Indian Soul */
+    --saffron: 38 95% 55%;
+    --saffron-glow: 38 100% 65%;
+    
+    /* Neutrals */
+    --cream: 60 30% 96%;
+    --white-pure: 0 0% 100%;
+    
+    /* Semantic Tokens */
+    --background: var(--spinach);
+    --foreground: var(--cream);
+    
+    --card: 150 35% 16%;
+    --card-foreground: var(--cream);
+    
+    --popover: 150 35% 14%;
+    --popover-foreground: var(--cream);
+    
+    --primary: var(--lettuce);
+    --primary-foreground: var(--spinach-deep);
+    
+    --secondary: 150 30% 20%;
+    --secondary-foreground: var(--cucumber);
+    
+    --muted: 150 25% 18%;
+    --muted-foreground: 145 20% 60%;
+    
+    --accent: var(--saffron);
+    --accent-foreground: var(--spinach-deep);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 150 25% 22%;
+    --input: 150 25% 20%;
+    --ring: var(--lettuce);
+    
+    --radius: 0;
+    
+    /* Glass Effects */
+    --glass-bg: 150 30% 20% / 0.6;
+    --glass-border: 145 40% 40% / 0.2;
+    --glass-blur: 20px;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 30px hsl(150 40% 10% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--lettuce) / 0.3);
+    --shadow-saffron: 0 0 30px hsl(var(--saffron) / 0.4);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(var(--spinach-deep)) 0%, hsl(var(--spinach)) 50%, hsl(150 35% 15%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(150 30% 25% / 0.4) 0%, hsl(150 30% 15% / 0.2) 100%);
+    --gradient-leaf: linear-gradient(135deg, hsl(var(--lettuce)) 0%, hsl(var(--lettuce-glow)) 100%);
+    --gradient-saffron: linear-gradient(135deg, hsl(var(--saffron)) 0%, hsl(var(--saffron-glow)) 100%);
+    
+    /* Sidebar - kept for compatibility */
+    --sidebar-background: var(--spinach);
+    --sidebar-foreground: var(--cream);
+    --sidebar-primary: var(--lettuce);
+    --sidebar-primary-foreground: var(--spinach-deep);
+    --sidebar-accent: 150 30% 18%;
+    --sidebar-accent-foreground: var(--cream);
+    --sidebar-border: 150 25% 22%;
+    --sidebar-ring: var(--lettuce);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body, html {
+    min-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .glass-card-glow {
+    @apply glass-card;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Organic Blob Shapes */
+  .blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  .blob-alt {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .float-fast {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+  
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  /* Rotate Slow */
+  .rotate-slow {
+    animation: rotateSlow 20s linear infinite;
+  }
+  
+  /* Gradient Text */
+  .text-gradient-leaf {
+    background: var(--gradient-leaf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-saffron {
+    background: var(--gradient-saffron);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Section Styling */
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-32;
+  }
+  
+  /* Organic Border */
+  .organic-border {
+    border-radius: 2rem 4rem 2rem 4rem;
+  }
+}
+
+@layer utilities {
+  /* Leaf Vein Texture Overlay */
+  .leaf-texture {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L30 60 M0 30 Q30 20 60 30' stroke='%23ffffff' stroke-opacity='0.02' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--lettuce) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--lettuce) / 0.6);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth Scroll Snap for sections */
+.scroll-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+}
